@@ -23,7 +23,7 @@ def node_info(Node_State_i, Node_Index_i, Parent_Node_Index_i):
 #Function that returns the position of the blank tile
 def blank_tile(state):
     result = np.where(state == 0)
-    return int(result[0]+1), int(result[1]+1)
+    return result[0][0]+1,result[1][0]+1
 
 #Function to move the blank tile to the left
 def ActionMoveLeft(node_array):
@@ -192,7 +192,3 @@ def generate_path(node_list):
     textfile2.close()
 
 generate_path(visited_node)
-
-
-
-
